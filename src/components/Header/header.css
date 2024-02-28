@@ -1,0 +1,115 @@
+
+.header {
+  height: 80px;
+  width: 100%;
+  background-color: var(--colDark);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.header_nav{
+  height: 100%;
+  max-width: 1350px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+}
+.header_nav-logo{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_nav-logo a{
+  color: var(--colWhite);
+}
+.header_nav-links{
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+}
+.header_nav-links li{
+  display: flex;
+  margin: 0px 0 0 20px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.header_nav-links li > a{  
+  margin-left: 8px;
+  color: var(--colWhite);
+  text-decoration: none;
+}
+.header_nav-links.active{
+  opacity: 1;
+  position: absolute;
+  left: 0%;
+}
+.header_nav-burger{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+  order: -1;
+}
+.header_nav-burger_logo{
+  height: 40px;
+  width: 40px;
+  background-color: var(--colWhite);
+}
+.header_nav-btn{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+}
+.header_nav-btn a{
+  text-decoration: none;
+  color: var(--colWhite);
+}
+.header-brand {
+  font-size: 24px;
+  font-weight: bold;
+  padding-right: 120px;
+}
+.header .container li{
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 800px){
+  .header_nav {
+    grid-template-columns: 2fr 4fr 2fr;
+  }
+  .header_nav-links{
+    background-color: var(--colDark);
+    height: auto;
+    width: auto;
+    padding-right: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    border-bottom-right-radius: 15px;
+    opacity: 0;
+    top: 80px;
+    left: -10%;
+    z-index: 1;
+  }
+  .header_nav-links{
+    order: -1;
+  }
+  .header_nav-burger{
+    
+    display: flex;
+  }
+  
+}
