@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { BrowserRouter, useLocation, Route, Routes} from "react-router-dom";
 import './App.css';
 import './normalize.css';
@@ -10,9 +10,9 @@ import PortfolioItem from './components/Portfolio/portfolio';
 
 
 
-
 export default function App(){
     
+  
     return (
     <BrowserRouter>
         <div className='app'>

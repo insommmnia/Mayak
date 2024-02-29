@@ -1,11 +1,13 @@
-import React from 'react';
+import { React, useState, useEffect} from "react";
 import './about.css';
-import '../../normalize.css';
 import PortfolioItem from '../Portfolio/portfolio';
 
 function About(props) {
+
+
+   
     return (
-        <div className='about'>
+        <div className='about' >
             <div className='about__bg'></div>
             <div className='container'>
                 <h1 className='about__title'>{props.title}</h1>
