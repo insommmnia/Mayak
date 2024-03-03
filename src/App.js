@@ -11,19 +11,22 @@ import PortfolioItem from './components/Portfolio/portfolio';
 
 
 export default function App(){
-    
+  
   
     return (
-    <BrowserRouter>
-        <div className='app'>
-        <Header></Header>
-        <main className='main'>
-            <Content />
-        </main>
-        </div>
-    </BrowserRouter>
+      <BrowserRouter>
+          <div className='app'>
+          <Header></Header>
+          <main className='main'>
+              <Content />
+          </main>
+          </div>
+      </BrowserRouter>
+   
     );
   }
+ 
+  
   function Content() {
     const AboutP = () => <About title='Abc'></About>;
     const PortfolioP = () => <PortfolioItem />;

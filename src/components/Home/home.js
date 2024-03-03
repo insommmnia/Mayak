@@ -3,6 +3,8 @@ import '../../normalize.css';
 
 import Hero from './hero';
 import About from './about';
+import Advantages from './advantages';
+import Footer from './footer';
 
 function Home() {
     
@@ -11,6 +13,8 @@ function Home() {
         <div className='Main'>
             <Hero></Hero>
             <About></About>
+            <Advantages></Advantages>
+            <Footer></Footer>
         </div>
     );
 }

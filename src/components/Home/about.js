@@ -1,27 +1,49 @@
-import { React, useRef , useEffect} from "react";
-import './about.css';
+import React, { useState, useRef, useEffect } from "react";
+import "./about.css";
+
 function About() {
-    const aboutBlockRef = useRef(null);
+  const aboutBlockRef = useRef(null);
+  const [number, setNumber] = useState(0);
+  const [number2, setNumber2] = useState(0);
 
   useEffect(() => {
+    let interval;
+    let numrandom = 0;
     const handleScroll = () => {
       if (aboutBlockRef.current) {
         const element = aboutBlockRef.current;
         const elementPosition = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        if (elementPosition < windowHeight * 0.6) {
-          element.classList.add('active');
+        
+        if (elementPosition < windowHeight * 0.7) {
+          element.classList.add("active");
+
+          let count = 0;
+          interval = setInterval(() => {
+            if (count < 7 && numrandom === 0) {
+              setNumber(Math.floor(100000 + Math.random() * 900000));
+              setNumber2(Math.floor(100 + Math.random() * 900));
+              count++;
+            } else {
+              clearInterval(interval);
+              setNumber(3215232);
+              setNumber2(234);
+              numrandom = 1;
+            }
+          }, 200);
+
         } else {
-          element.classList.remove('active');
+          element.classList.remove("active");
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
 
     return (
         <div className="about_sec">
@@ -43,12 +65,63 @@ function About() {
                     </div>
                     <div className='about_descr'>
                         <h3>Наш бот - это ключ к увлекательному миру знакомств и новых связей! </h3>
-                        <h3>Присоединяйся к нам и стань частью нашей дружной семьи из уже <span className='colRed'>123456</span> пользователей на <span className='colRed'>12343</span> серверах!</h3>
+                        <h3>Присоединяйся к нам и стань частью нашей дружной семьи из уже <span className='colRed'>{number}</span> пользователей на <span className='colRed'>{number2}</span> серверах!</h3>
                     </div>
                     <div className='about_servers_block'>
-                        <div className="about_server_card"></div>
-                        <div className="about_server_card"></div>
-                        <div className="about_server_card"></div>
+                        <div className="about_server_card">
+                          <img src={require("../../img/decide.png")} alt="" />
+                          <div className="about_server_card_info">
+                            <h2>Decide</h2>
+                            <p>
+                            <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
+
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+
+                            </svg>
+                              231433
+                              </p>
+                          </div>
+                        </div>
+                        <div className="about_server_card">
+                          <img src={require("../../img/decide.png")} alt="" />
+                          <div className="about_server_card_info">
+                            <h2>Decide</h2>
+                            <p>
+                            <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
+
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+
+                            </svg>
+                              231433
+                              </p>
+                          </div>
+                        </div>
+                        <div className="about_server_card">
+                          <img src={require("../../img/decide.png")} alt="" />
+                          <div className="about_server_card_info">
+                            <h2>Decide</h2>
+                            <p>
+                            <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
+
+                              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+
+                            </svg>
+                              231433
+                              </p>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>

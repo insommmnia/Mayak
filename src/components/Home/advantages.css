@@ -1,0 +1,201 @@
+.advant_sec{
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: auto;
+}
+.advant_bg{
+    position: absolute;
+    background-image: url("../../img/advantages_bg.png");
+    background-repeat: repeat-x;
+    background-size:auto;
+    left: 0;
+    top: 10%;
+    width: 100vw;
+    height: 100%;
+   
+}
+.advant_container{
+    max-width: 1080px;
+    width: 100%;
+    height: auto;
+    gap: 180px;
+    z-index: 1;
+    display: grid;
+    padding: 50px 0px 50px 0px;
+
+}
+.advant_block{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+    gap: 0px;
+    margin-top: 50px;
+    opacity: 0;
+    transform: scale(0.9);
+     transition: gap 32s ease-in-out, 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    align-items: center;
+}
+.advant_block.active{
+    margin-top: 0px;
+    opacity: 1;
+    gap: 140px;
+    transform: scale(1);
+}
+.advant_block-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+    gap: 0px;
+    margin-top: 50px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.4s ease-in-out;
+}
+.advant_block-2.active{
+    margin-top: 0px;
+    opacity: 1;
+    gap: 140px;
+    transform: scale(1);
+}
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(10px) scale(0.96);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-5px) scale(1); 
+        opacity: 1;
+    }
+}
+
+.advant_lines img{
+    animation: moveUpDown 4s cubic-bezier(0.445, 0.05, 0.55, 0.95)  infinite; 
+    height: 300px;
+}
+.advant_card-1{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 22, 22, 1) 100%);
+    color: var(--colWhite);
+    position: relative;
+    border-radius: 15px;
+    width: 70%;
+    padding: 60px 35px 0px 20px;
+    transition: 0.4s ease-in-out;
+    -webkit-box-shadow: 4px 4px 31px 5px rgba(101, 43, 193, 0.2);
+    -moz-box-shadow: 4px 4px 31px 5px rgba(101, 43, 193, 0.2);
+    box-shadow: 4px 4px 31px 5px rgba(101, 43, 193, 0.2);
+}
+
+.advant_card-2{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 22, 22, 1) 100%);
+    color: var(--colWhite);
+    position: relative;
+    border-radius: 15px;
+    width: 70%;
+    padding: 60px 35px 0px 20px;
+    transition: 0.4s ease-in-out;
+    -webkit-box-shadow: 4px 4px 31px 5px rgba(43, 158, 193, 0.2);
+    -moz-box-shadow: 4px 4px 31px 5px rgba(43, 158, 193, 0.2);
+    box-shadow: 4px 4px 31px 5px rgba(43, 151, 193, 0.2);
+}
+.advant_card-3{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 22, 22, 1) 100%);
+    color: var(--colWhite);
+    position: relative;
+    border-radius: 15px;
+    width: 70%;
+    padding: 60px 35px 0px 20px;
+    transition: 0.4s ease-in-out;
+    -webkit-box-shadow: 4px 4px 31px 5px rgba(188, 43, 193, 0.2);
+    -moz-box-shadow: 4px 4px 31px 5px rgba(163, 43, 193, 0.2);
+    box-shadow: 4px 4px 31px 5px rgba(163, 43, 193, 0.2);
+    
+}
+
+.advant_card-1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, var(--colPur) 80%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.advant_card-3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, var(--colPink) 80%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.advant_card-2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, var(--colBlue) 80%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+.advant_card_img{
+    height: 70px;
+    padding-bottom: 30px;
+}
+.advant_title{
+    padding-bottom: 30px;
+}
+.advant_title ~ h4{
+    padding-bottom: 30px;
+}
+@media screen and (max-width: 1000px) {
+    
+    .advant_block.active{
+        gap: 0px;
+    }
+}
+@media screen and (max-width: 660px) {
+
+    .advant_block{
+        transition: gap 32s ease-in-out, 0.4s ease-in-out;
+        gap: 150px;
+    }
+    .advant_container {
+        gap: 0px;
+    }
+    .advant_block{
+        grid-template-columns: 1fr;
+    }
+    .advant_lines img{
+        width: 70px;
+    }
+    @keyframes moveUpDown {
+        0%, 100% {
+            transform: scale(0.96) rotate(0.25turn);
+            opacity: 0.6;
+        }
+        50% {
+            transform:  scale(1) rotate(0.25turn);
+            opacity: 1;
+        }
+    }
+    .advant_lines{
+        order: 2;
+    }
+ 
+}

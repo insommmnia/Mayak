@@ -171,6 +171,7 @@
 
 
 .header_nav-links li > a{  
+  font-weight: 400;
   margin-left: 8px;
   color: var(--colWhite);
   text-decoration: none;

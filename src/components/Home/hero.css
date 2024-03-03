@@ -1,6 +1,6 @@
 .hero {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 900px;
     overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
     background: var(--colRed);
     display: block;
     width: 100%;
-    height: 25vh;
+    height: 31vh;
 }
 
 .hero svg>g>use {
