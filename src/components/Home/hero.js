@@ -3,9 +3,11 @@ import './hero.css';
 function Hero() {
     
     useEffect(() => {
-        const element = document.getElementById('hero_con');
+        const element = document.getElementById('hero_img');
+        const element2 = document.getElementById('hero_title');
         if (element) {
           element.classList.add('animate_hero');
+          element2.classList.add('animate_hero');
         }
       }, []);
 
@@ -14,10 +16,10 @@ function Hero() {
         <div className='hero'>
             <div className='hero_bg'>
                 <div className='hero_container' id="hero_con">
-                    <div className="hero_img">
+                    <div className="hero_img" id="hero_img">
                         <img src={require("../../img/mayak.png")} alt="hero_img" />
                     </div>
-                    <div className="hero_title">
+                    <div className="hero_title" id="hero_title">
                         <h1>Маяковский - бот знакомств!</h1>
                         <div className='hero_title_btn_block'>
                             <div class="hero_button_d" id="hero_button_d">                        

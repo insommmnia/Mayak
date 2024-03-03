@@ -45,6 +45,11 @@ function About() {
                         <h3>Наш бот - это ключ к увлекательному миру знакомств и новых связей! </h3>
                         <h3>Присоединяйся к нам и стань частью нашей дружной семьи из уже <span className='colRed'>123456</span> пользователей на <span className='colRed'>12343</span> серверах!</h3>
                     </div>
+                    <div className='about_servers_block'>
+                        <div className="about_server_card"></div>
+                        <div className="about_server_card"></div>
+                        <div className="about_server_card"></div>
+                    </div>
                 </div>
             </div>
         </div>
