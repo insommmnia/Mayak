@@ -15,7 +15,7 @@ function About() {
         const elementPosition = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         
-        if (elementPosition < windowHeight * 0.7) {
+        if (elementPosition < windowHeight * 0.5) {
           element.classList.add("active");
 
           let count = 0;
@@ -75,29 +75,11 @@ function About() {
                             <p>
                             <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
 
-                              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                              <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
 
-                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                              <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
 
-                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
-
-                            </svg>
-                              231433
-                              </p>
-                          </div>
-                        </div>
-                        <div className="about_server_card">
-                          <img src={require("../../img/decide.png")} alt="" />
-                          <div className="about_server_card_info">
-                            <h2>Decide</h2>
-                            <p>
-                            <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
-
-                              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-
-                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-
-                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> </g>
 
                             </svg>
                               231433
@@ -111,11 +93,29 @@ function About() {
                             <p>
                             <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
 
-                              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                              <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
 
-                              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                              <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
 
-                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> </g>
+
+                            </svg>
+                              231433
+                              </p>
+                          </div>
+                        </div>
+                        <div className="about_server_card">
+                          <img src={require("../../img/decide.png")} alt="" />
+                          <div className="about_server_card_info">
+                            <h2>Decide</h2>
+                            <p>
+                            <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#D9D9D9">
+
+                              <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
+
+                              <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"/>
+
+                              <g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#D9D9D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> </g>
 
                             </svg>
                               231433

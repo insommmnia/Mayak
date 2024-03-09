@@ -61,6 +61,7 @@
 }
 
 .colRed {
+    font-weight: 600;
     color: var(--colRed);
 }
 
@@ -151,7 +152,7 @@
     
 }
 @media screen and (max-width: 560px) {
-        .about_block.active {
+        /* .about_block.active {
             margin-top: 147px;
-        }
+        } */
 }

@@ -18,7 +18,7 @@
   font-family: OpenSans;
   src: url("../src/fonts/OpenSans-Bold.ttf");
   font-display: swap;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
 }
 h1, h2, h3, h4{
@@ -42,6 +42,7 @@ body{
   font-weight: 300;
   background-color: var(--colDark);
   overflow-x: hidden;
+
 }
 
 .fadeIn {

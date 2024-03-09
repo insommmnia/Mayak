@@ -10,7 +10,7 @@ function Footer() {
             
             <div className='footer_bg'>
             <div className="footer_block">
-                <img src={require("../../img/discordtyan.png")} alt="" />
+                <img src={require("../../img/mayak_logo.png")} alt="" />
                 <div className='hero_title_btn_block'>
                     <div className="hero_button_i" id="hero_button_i">
                         <div id="underline"></div>

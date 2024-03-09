@@ -1,21 +1,55 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect, createContext, useContext } from 'react';
 import './header.css';
 import '../../normalize.css';
 import {
   Link,
+  useLocation
 } from 'react-router-dom';
 
+
 function Header(){
+
+    const location = useLocation();
+
+    const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null);
+    const handleLogin = () => {
+        window.location.href = 'http://localhost:3001/login';
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        setUser(null);
+        setIsActive2(!isActive2);
+    };
+   
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            const storedUser = localStorage.getItem('user');
+            if (storedUser) {
+                setUser(JSON.parse(storedUser));
+            }
+        }, 900); // Через 3 секунды
+    
+        return () => clearTimeout(timeout); // Очистка таймера при размонтировании компонента
+    }, []);
+    
+
     const [isActive, setIsActive] = useState(false);
+    const [isActive2, setIsActive2] = useState(false);
     const toggleMenu = () => {
         setIsActive(!isActive);
-      };
+    };
+    const toggleProfile = () => {
+        setIsActive2(!isActive2);
+    };
+
+
     return (
         <header className='header'>
            
             <nav className='header_nav' >
-                <div className='header_nav-logo'><a><Link to="/"><img  src={require("../../img/mayak_logo.png")} alt="" /></Link></a></div>
+                <div className='header_nav-logo'><Link to="/"><img  src={require("../../img/mayak_logo.png")} alt="" /></Link></div>
                 <div className='header_nav-burger' >
                     <div className='header_nav-burger_logo'>
                     <input onClick={toggleMenu}  className="checkbox" type="checkbox" name="" id="" />
@@ -32,7 +66,7 @@ function Header(){
                             <path className="sharpcorners_een" d="M2,4v24h28V4H2z M27,13h-2v-2.586l-10,10l-2-2l-4,4V25H5v-4h2.586L13,15.586l2,2L23.586,9H21V7h6
                             V13z"/>
                         </svg>
-                        <Link to="/">Топ серверов</Link>
+                        <Link to="/servers">Топ серверов</Link>
                     </li>
                     <li>
                     <svg fill="#000000"  viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" >
@@ -74,14 +108,40 @@ function Header(){
                         <Link to="">Документация</Link>
                     </li>
                 </ul>
+                
                 <div className='header_nav-btn'>
                     <div className='header_sign-in'>
-                        <svg width="22px" height="22px" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
-                            <path  d="M15.621 2.66859L11.9314 2.08881C8.71084 1.58272 7.10055 1.32967 6.05027 2.22779C5 3.12591 5 4.75596 5 8.01607V11H10.9194L8.21913 7.62469L9.78087 6.37531L13.7809 11.3753L14.2806 12L13.7809 12.6247L9.78087 17.6247L8.21913 16.3753L10.9194 13H5V15.9831C5 19.2432 5 20.8733 6.05027 21.7714C7.10055 22.6695 8.71084 22.4165 11.9314 21.9104L15.621 21.3306C17.2337 21.0771 18.04 20.9504 18.52 20.3891C19 19.8279 19 19.0116 19 17.3791V6.6201C19 4.98758 19 4.17132 18.52 3.61003C18.04 3.04874 17.2337 2.92202 15.621 2.66859Z" fill="#D9D9D9"/>
-                        </svg>
-                        <Link to="">Войти</Link>
+                        {user ? (
+                            <div className='header_profile' onClick={toggleProfile}>
+                                <img  src={(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`)} ></img>
+                                <div><h4>{user.username}</h4></div>
+                                
+                            </div>
+                        ) : (
+                            <div className='header_sign-in'>
+                                <svg width="22px" height="22px" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                                    <path  d="M15.621 2.66859L11.9314 2.08881C8.71084 1.58272 7.10055 1.32967 6.05027 2.22779C5 3.12591 5 4.75596 5 8.01607V11H10.9194L8.21913 7.62469L9.78087 6.37531L13.7809 11.3753L14.2806 12L13.7809 12.6247L9.78087 17.6247L8.21913 16.3753L10.9194 13H5V15.9831C5 19.2432 5 20.8733 6.05027 21.7714C7.10055 22.6695 8.71084 22.4165 11.9314 21.9104L15.621 21.3306C17.2337 21.0771 18.04 20.9504 18.52 20.3891C19 19.8279 19 19.0116 19 17.3791V6.6201C19 4.98758 19 4.17132 18.52 3.61003C18.04 3.04874 17.2337 2.92202 15.621 2.66859Z" fill="#D9D9D9"/>
+                                </svg>
+                                <Link to="" onClick={handleLogin}>Войти</Link>
+                            </div>
+                        )}
                     </div>
+                    <ul className={`header_profile-links ${isActive2 ? 'active' : ''}`}>
+                    <li>
+                        <svg width="22px" height="22px" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                                    <path  d="M15.621 2.66859L11.9314 2.08881C8.71084 1.58272 7.10055 1.32967 6.05027 2.22779C5 3.12591 5 4.75596 5 8.01607V11H10.9194L8.21913 7.62469L9.78087 6.37531L13.7809 11.3753L14.2806 12L13.7809 12.6247L9.78087 17.6247L8.21913 16.3753L10.9194 13H5V15.9831C5 19.2432 5 20.8733 6.05027 21.7714C7.10055 22.6695 8.71084 22.4165 11.9314 21.9104L15.621 21.3306C17.2337 21.0771 18.04 20.9504 18.52 20.3891C19 19.8279 19 19.0116 19 17.3791V6.6201C19 4.98758 19 4.17132 18.52 3.61003C18.04 3.04874 17.2337 2.92202 15.621 2.66859Z" fill="#D9D9D9"/>
+                        </svg>
+                        <Link to="" onClick={handleLogout}>Выйти</Link>
+                    </li>
+                    <li>
+                        <svg width="22px" height="22px" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+                                    <path  d="M15.621 2.66859L11.9314 2.08881C8.71084 1.58272 7.10055 1.32967 6.05027 2.22779C5 3.12591 5 4.75596 5 8.01607V11H10.9194L8.21913 7.62469L9.78087 6.37531L13.7809 11.3753L14.2806 12L13.7809 12.6247L9.78087 17.6247L8.21913 16.3753L10.9194 13H5V15.9831C5 19.2432 5 20.8733 6.05027 21.7714C7.10055 22.6695 8.71084 22.4165 11.9314 21.9104L15.621 21.3306C17.2337 21.0771 18.04 20.9504 18.52 20.3891C19 19.8279 19 19.0116 19 17.3791V6.6201C19 4.98758 19 4.17132 18.52 3.61003C18.04 3.04874 17.2337 2.92202 15.621 2.66859Z" fill="#D9D9D9"/>
+                        </svg>
+                        <Link to="" >Профиль</Link>
+                    </li>
+                    </ul>
                 </div>
+               
             </nav>
         </header>
     );
@@ -90,3 +150,4 @@ function Header(){
 
 
 export default Header;
+

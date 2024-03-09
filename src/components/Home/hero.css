@@ -13,13 +13,16 @@
     }
 }
 
+
+
 .hero svg {
     position: absolute;
     width: 100%;
     background: var(--colRed);
     display: block;
+    top: 350px;
     width: 100%;
-    height: 31vh;
+    height: 40vh;
 }
 
 .hero svg>g>use {
@@ -43,6 +46,8 @@
     animation-duration: 20s;
     fill: var(--colDark);
 }
+
+
 
 .hero_bg {
     background-color: var(--colRed);
@@ -77,10 +82,13 @@
     margin-top: -150px;
     width: 100%;
     opacity: 0;
+    
     transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hero_img.animate_hero {
+    transition-delay: 1200ms;
+    transition-property: margin-top;
     opacity: 1;
     margin-top: 0px;
 }
@@ -100,10 +108,13 @@
     max-width: 1200px;
     width: 100%;
     opacity: 0;
+    
     transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hero_title.animate_hero {
+    transition-delay: 1200ms;
+    transition-property:  margin-top;
     opacity: 1;
     margin-top: 0px;
 }
@@ -239,6 +250,10 @@
 }
 
 @media screen and (max-width: 560px) {
+    .hero svg {
+        top: 450px;
+        height: 30vh;
+    }
     .hero_container {
         margin-top: 50px;
         height: 500px;

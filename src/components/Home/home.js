@@ -6,7 +6,7 @@ import About from './about';
 import Advantages from './advantages';
 import Footer from './footer';
 
-function Home() {
+function Home({ user }) {
     
     
     return (

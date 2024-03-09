@@ -108,20 +108,22 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  left: -100%;
+  z-index: 1;
   transition: left 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 .header_nav-links.active{
   z-index: 1;
   opacity: 1;
   position: absolute;
-  transition: left 0.4s ease-in-out, opacity 0.4s ease-in-out;
   left: 0%;
+  transition: left 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 .header_nav-links li{
   display: flex;
   position: relative;
-  margin: 20px 0 20px 30px;
+  margin: 20px 0 15px 30px;
   text-decoration: none;
   align-items: center;
 }
@@ -192,12 +194,14 @@
 }
 
 .header_nav-btn{
+  overflow: hidden;
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   order: 1;
+  margin-left: -30px;
 }
 .header_nav-btn a{
   text-decoration: none;
@@ -208,7 +212,116 @@
   font-weight: bold;
   padding-right: 120px;
 }
+.header_profile{
+  overflow: hidden;
+  width: 100px;
+  height: auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.header_profile > img{
+  padding-right: 10px;
+  border-radius: 100%;
+  height: 40px !important;
+}
+.header_profile-links{
+  overflow: hidden;
+  z-index: 1;
+  background-color: var(--colDark);
+  height: 0px;
+  width: 100px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: grid;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  list-style: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  opacity: 0;
+  top: 63px;
+  transition: 0.4s ease-in-out;
+}
+
+.header_profile-links.active{
+  z-index: 1;
+  opacity: 1;
+  height: 100px;
+  position: absolute;
+  transition:  0.4s ease-in-out;
+}
+
+.header_profile-links li{
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  align-items: center;
+}
+.header_profile-links li::before{
+  content: '';
+  position: absolute;
+  background: var(--colWhite);
+  display: block;
+  border-radius: 100%;
+  bottom: 10px;
+  opacity: 0;
+  left: 0;
+  width:100%;
+  height: 2px;
+  transition: all 0.2s ease-in-out;
+}
+.header_profile-links li:hover::before{
+  transition: all 0.2s ease-in-out;
+  background: var(--colRed);
+  opacity: 1;
+  width: 100%;
+}
+.header_profile-links li:hover>svg>path{
+  transition: all 0.3s ease-in-out;
+  fill: var(--colRed);
+}
+
+.header_profile-links li:hover>a{
+  transition: all 0.3s ease-in-out;
+  color: var(--colRed);
+}
+.header_profile-links li:active::before{
+  transition: 0 ;
+  background: var(--colRed);
+  opacity: 1;
+  width: 100%;
+}
+.header_profile-links li:active>svg>path{
+  transition: all 0.3s ease-in-out;
+  fill: var(--colRed);
+}
+
+.header_profile-links li:active>a{
+  transition: 0 ;
+  color: var(--colRed);
+}
+
+.header_profile-links li > a{  
+  font-weight: 400;
+  margin-left: 8px;
+  color: var(--colWhite);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.header_profile-links li>svg{
+  width: 18px;
+  height: 18px;
+  fill: var(--colWhite);
+  transition: all 0.3s ease-in-out;
+}
 .header_sign-in{
+  
   width: 100px;
   height: 30px;
   border-radius: 15px;
@@ -216,6 +329,9 @@
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
+}
+.header_sign-in img{
+  height: 30px;
 }
 .header_sign-in svg>path{
   transition: all 0.3s ease-in-out;
@@ -246,7 +362,17 @@
 }
 
 
+@media screen and (max-width: 1400px){
+  .header_profile-links{   
+    padding-right: 40px;
+    right: 0;
+
+  }
+}
 @media screen and (max-width: 800px){
+  .header_profile-links{   
+    padding-right: 20px;
+  }
   .header_nav {
     grid-template-columns: 2fr 4fr 2fr;
   }
@@ -262,16 +388,29 @@
     opacity: 0;
     top: 80px;
     left: -10%;
-    z-index: -1;
+    transition: left 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
   .header_nav-links li::before{
     bottom: -8px;
     
   }
- 
+  .header_sign-in a{
+    font-size: 18px;
+  }
   .header_nav-burger{
-    
+    padding-left: 35px;
+    justify-content: flex-start;
+    align-items: center;
     display: flex;
   }
   
+}
+@media screen and (max-width: 500px){
+  
+  .header_nav-logo{
+    display: none;
+  }
+  .header_nav {
+    grid-template-columns: 2fr 2fr;
+  }
 }
