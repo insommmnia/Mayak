@@ -1,24 +1,24 @@
-.servers_hero_sec {
+.stats_hero_sec {
     display: flex;
     justify-content: center;
 }
 
-.servers_hero_container {
+.stats_hero_container {
     max-width: 1000px;
     width: 100%;
     display: flex;
     z-index: 1;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 30px 50px 30px;
     justify-content: center;
     align-items: flex-start;
 }
 
-.servers_hero_block {
+.stats_hero_block {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 22, 22, 1) 100%);
     position: relative;
     border-radius: 15px;
-    width: 90%;
+    width: 100%;
     opacity: 1;
     margin-top: 10px;
     transition: 0.8s ease-in-out;
@@ -27,13 +27,13 @@
     box-shadow: 4px 4px 31px 5px rgba(193, 43, 61, 0.2);
 }
 
-.servers_hero_block.active {
+.stats_hero_block.active {
     margin-top: 0px;
     transform: scale(1);
     opacity: 1;
 }
 
-.servers_hero_block::before {
+.stats_hero_block::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -45,7 +45,7 @@
     mask-composite: exclude;
 }
 
-.servers_hero_title {
+.stats_hero_title {
     margin-left: -10px;
     text-align: center;
     position: relative;
@@ -53,7 +53,7 @@
     color: var(--colWhite);
 }
 
-.servers_hero_title svg {
+.stats_hero_title svg {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -66,9 +66,41 @@
     color: var(--colRed);
 }
 
-.servers_hero_descr {
-    text-align: center;
-    padding: 0px 0px 30px 0px;
+.stats_hero_descr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px 30px 20px 30px;
+    gap: 40px;
     color: var(--colWhite);
+}
+.stats_hero_statblock{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 22, 22, 1) 100%);
+    position: relative;
+    display: flex;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+    gap: 30px;
+    opacity: 1;
+    margin-top: 10px;
+    transition: 0.8s ease-in-out; 
+}
+.stats_hero_statblock::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, #dfdfdf7e 80%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+.stats_hero_statblock img{
+    height: 70px;
+}
+.stats_hero_stat_descr h3{
+    padding: 0;
+    margin: 10px 0 0 0;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, createContext, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './header.css';
 import '../../normalize.css';
 import {
@@ -11,6 +11,7 @@ import {
 function Header(){
 
     const location = useLocation();
+    const headerNavRef = useRef(null);
 
     const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null);
     const handleLogin = () => {
@@ -22,7 +23,21 @@ function Header(){
         setUser(null);
         setIsActive2(!isActive2);
     };
-   
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (headerNavRef.current && !headerNavRef.current.contains(event.target)) {
+                setIsActive(false);
+                setIsActive2(false);
+            }
+        };
+    
+        document.addEventListener('click', handleClickOutside);
+    
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+    
     useEffect(() => {
         const timeout = setTimeout(() => {
             const storedUser = localStorage.getItem('user');
@@ -39,20 +54,26 @@ function Header(){
     const [isActive2, setIsActive2] = useState(false);
     const toggleMenu = () => {
         setIsActive(!isActive);
+        if(isActive2) {
+            setIsActive2(false);
+        }
     };
     const toggleProfile = () => {
         setIsActive2(!isActive2);
+        if(isActive) {
+            setIsActive(false);
+        }
     };
 
 
     return (
         <header className='header'>
            
-            <nav className='header_nav' >
+            <nav ref={headerNavRef} className='header_nav' >
                 <div className='header_nav-logo'><Link to="/"><img  src={require("../../img/mayak_logo.png")} alt="" /></Link></div>
                 <div className='header_nav-burger' >
                     <div className='header_nav-burger_logo'>
-                    <input onClick={toggleMenu}  className="checkbox" type="checkbox" name="" id="" />
+                    <input onClick={toggleMenu}  className={`checkbox ${isActive ? 'active' : ''}`} type="checkbox" name="" id="" />
                         <div className="hamburger-lines">
                             <span className="line line1"></span>
                             <span className="line line2"></span>
@@ -60,7 +81,13 @@ function Header(){
                         </div>
                     </div>
                 </div>
-                <ul className={`header_nav-links ${isActive ? 'active' : ''}`}>
+                <ul  className={`header_nav-links ${isActive ? 'active' : ''}`}>
+                    <li>
+                    <svg className='home_svg' fill="#000000" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.469 12.594l3.625 3.313c0.438 0.406 0.313 0.719-0.281 0.719h-2.719v8.656c0 0.594-0.5 1.125-1.094 1.125h-4.719v-6.063c0-0.594-0.531-1.125-1.125-1.125h-2.969c-0.594 0-1.125 0.531-1.125 1.125v6.063h-4.719c-0.594 0-1.125-0.531-1.125-1.125v-8.656h-2.688c-0.594 0-0.719-0.313-0.281-0.719l10.594-9.625c0.438-0.406 1.188-0.406 1.656 0l2.406 2.156v-1.719c0-0.594 0.531-1.125 1.125-1.125h2.344c0.594 0 1.094 0.531 1.094 1.125v5.875z"></path>
+                    </svg>
+                        <Link to="/">Главная</Link>
+                    </li>
                     <li>
                         <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 32 32" space="preserve">
                             <path className="sharpcorners_een" d="M2,4v24h28V4H2z M27,13h-2v-2.586l-10,10l-2-2l-4,4V25H5v-4h2.586L13,15.586l2,2L23.586,9H21V7h6

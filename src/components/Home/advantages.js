@@ -14,7 +14,12 @@ function Advantages() {
                 const element = ref.current;
                 const elementPosition = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                const isVisible = elementPosition < windowHeight * 0.7;
+                let isVisible;
+                if (window.innerWidth > 2000) {
+                    isVisible = elementPosition < windowHeight * 0.8;
+                } else {
+                    isVisible = elementPosition < windowHeight * 0.4;
+                }
                 element.classList.toggle("active", isVisible);
             }
         };

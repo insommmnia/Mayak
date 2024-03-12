@@ -5,6 +5,7 @@ import './normalize.css';
 
 import Header from './components/Header/header';
 import Servers from './components/Servers/servers';
+import Stats from './components/Stats/stats';
 import Home from './components/Home/home';
 import PortfolioItem from './components/Portfolio/portfolio';
 import Callback from './components/Home/callback';
@@ -45,10 +46,8 @@ export default function App(){
           });
           const data = await response.json();
           setPostData(data);
-          console.log(data);
           localStorage.setItem('user', JSON.stringify(data));
         } catch (error) {
-          console.error(error);
         }
       };
   
@@ -57,6 +56,7 @@ export default function App(){
 
 
     const ServersP = () => <Servers></Servers>;
+    const StatsP = () => <Stats></Stats>;
     const PortfolioP = () => <PortfolioItem />;
     const HomeP = () => <Home ></Home>;
 
@@ -88,7 +88,7 @@ export default function App(){
           <Route path="/servers" element={<ServersP  />} />
           <Route path="/" element={<HomeP />} />
           <Route path="/callback" element={<Callback />} />
-          <Route path="/portfolio" element={<PortfolioP />} />
+          <Route path="/portfolio" element={<StatsP />} />
         </Routes>
       </div>
     );

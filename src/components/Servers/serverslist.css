@@ -1,0 +1,268 @@
+.servers_list_sec {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    
+}
+
+.servers_list_container {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    z-index: 1;
+    padding: 50px 0px 50px 0px;
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+.servers_list_block {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 22, 22, 1) 100%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 10fr 3fr;
+    border-radius: 15px;
+    width: 90%;
+    opacity: 1;
+    height: 110%;
+    margin-top: 10px;
+    transition: 0.8s ease-in-out;
+    -webkit-box-shadow: 4px 4px 31px 5px rgba(105, 105, 105, 0.322);
+    -moz-box-shadow: 4px 4px 31px 5px rgba(105, 105, 105, 0.274);
+    box-shadow: 4px 4px 31px 5px rgba(105, 105, 105, 0.39);
+}
+
+.servers_list_block.active {
+    margin-top: 0px;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.servers_list_block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, rgb(105, 105, 105) 80%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.servers_list_num {
+    background: rgb(105, 105, 105);
+    background: linear-gradient(180deg, rgb(141, 141, 141) 0%, rgba(0,0,1,1) 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--colWhite);
+}
+.servers_list_num h2 {
+    font-weight: 400;
+    margin-top: -10px;
+}
+.colRed {
+    font-weight: 600;
+    color: var(--colRed);
+}
+
+.servers_list_descr {
+    display: flex;
+    align-items: center;
+    color: var(--colWhite);
+}
+.server_list_card {
+    color: var(--colWhite);
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    height: 100%;
+    width: auto;
+    gap: 10px;
+    padding: 0px 35px 0px 20px;
+    transition: 0.4s ease-in-out;
+}
+.server_list_card_info{
+    margin-left: 30px;
+}
+.server_list_card img{
+    border-radius: 100%;
+    height: 80px;
+}
+.server_list_card_info h2{
+    margin: 0;
+    margin-top: 15px;
+}
+.server_list_card_info p{
+    padding: 0;
+    margin-top: -5px;
+}
+.server_list_card_info p svg{
+   
+}
+.server_list_people_num svg{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    fill: var(--colWhite);
+    margin-top: 16px;
+    padding-right: 5px;
+    display: inline-block;
+}
+.server_list_anket_num svg{
+    width: 22px;
+    height: 22px;
+    position: relative;
+    top: 3px;
+    fill: var(--colWhite);
+    margin-top: 12px;
+    padding-right: 5px;
+}
+.server_list_anket_num .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    height: 30px;
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    top:10px;
+    left: 40%;
+    opacity: 0;
+    transition: .3s;
+  }
+  .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #1f1f1f transparent transparent transparent;
+  }
+  .server_list_anket_num:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+.server_list_server_info{
+    display: flex;
+    gap: 20px;
+}
+.server_list_btn_block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.server_list_button_i {
+    background-color: var(--colRed);
+    display: inline-flex;
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 25px 0 25px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+#underline {
+    width: 100%;
+    height: 3px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -200px;
+    background: var(--colDark);
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+}
+.server_list_button_i:hover {
+    background-color: var(--colRed);
+}
+
+.server_list_button_i a {
+    text-decoration: none;
+    color: var(--colWhite);
+    font-weight: 400 !important;
+    position: relative;
+    font-weight: bold;
+    transition: all .45s ease-Out;
+}
+
+.server_list_button_i:hover #underline {
+    background: var(--colWhite);
+    left: 0;
+}
+
+
+@media screen and (max-width:650px) {
+    .servers_list_container{
+        gap: 80px;
+    }
+    .servers_list_block {
+
+        grid-template-columns: 1fr;
+      
+       
+    }
+    .servers_list_descr {
+        justify-content: center;
+    }
+    .server_list_card {
+        justify-items: center;
+        display: grid;
+        
+    }
+    .server_list_card {
+        padding: 0px 0px 0px 0px;
+    }
+    .server_list_card_info {
+        text-align: center;
+        margin-left: 0px;
+    }
+    .servers_list_num {
+        background: rgb(105, 105, 105);
+        background: linear-gradient(180deg, rgb(105, 105, 105) 0%, rgb(105, 105, 105) 100%);
+        border-radius: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .servers_list_num h2 {
+        margin-top: 10px;
+    }
+    .servers_list_descr {
+        padding: 20px 0 0px 0;
+       
+    }
+    .server_list_anket_num .tooltiptext {
+        top:50%;
+        left: 50%;
+        opacity: 0;
+        transition: .3s;
+      }
+    .server_list_btn_block{
+        padding: 20px 0 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+}

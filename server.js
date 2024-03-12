@@ -23,6 +23,21 @@ app.get('/callback', (req, res) => {
   // Перенаправляем на http://localhost:3000/ с параметром code
   res.redirect(`http://localhost:3000/?code=${code}`);
 });
+app.get('/guildMembersCount/:guildId', async (req, res) => {
+  const guildId = req.params.guildId;
+  try {
+      const response = await axios.get(`https://discord.com/api/v9/guilds/${guildId}`, {
+          headers: {
+              Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.Gl5ARI.7mXIy2L5pUZBLRy11abd_crNVayD8zXaEJBz94'
+          }
+      });
+      const membersCount = response.data.member_count;
+      res.json({ membersCount });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error fetching guild members count' });
+  }
+});
 app.post('/callback', async (req, res) => {
   const code = req.body.code; // Извлекаем код из тела запроса
 

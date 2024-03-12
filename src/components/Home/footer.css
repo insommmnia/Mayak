@@ -2,7 +2,7 @@
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    height: 500px;
+    height: 650px;
     width: 100%;
     align-items: end;
     z-index: 0;
@@ -30,18 +30,75 @@
     
 }
 .footer_block img{
-    margin-top: 220px;
-    height: 250px;
+    margin-top: 100px;
     padding-bottom: 50px;
+    height: 250px;
 }
-.footer_block .hero_button_i{
-    margin-left: 35px;
-    
+
+.footer_title_btn_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
 }
-.footer_block .hero_title_btn_block{
-    padding-bottom: 80px;
-    
+
+.footer_button_d {
+    background-color: var(--colWhite);
+    display: inline-flex;
+    height: 50px;
+    width: 250px;
+    border-radius: 50px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    top: -10px;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
+
+.footer_button_d svg {
+    position: absolute;
+    left: 0px;
+    height: 30px;
+    width: 60px;
+    background-color: transparent;
+    color: var(--colRed);
+}
+
+.footer_button_d:hover {
+    background-color: #e2e2e2;
+}
+
+.footer_button_d a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--colRed);
+    position: relative;
+    font-weight: bold;
+    transition: all .45s ease-Out;
+}
+
+#underline {
+    width: 100%;
+    height: 3px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -250px;
+    background: var(--colRed);
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+}
+
+.footer_button_d:hover #underline {
+    left: 0;
+}
+
 @media screen and (max-width: 800px) {
     
     .footer_block img{
@@ -50,16 +107,21 @@
     .footer_block .hero_button_i{
         margin-left: 0px;
     }
+    .footer_button_d {
+        font-size: 18px;
+        width: 200px;
+    }
+    
 }
 @media screen and (max-width: 560px) {
     .footer_bg {
-        background-size: 140% 100%;
-        background-position-x: -70px;
+        background-size: 180% 100%;
+        background-position-x: -120px;
     }
     
     .footer_block img{
-        margin-top: 240px;
-        height: 150px;
+        margin-top: 100px;
+        height: 200px;
     }
     .footer_block .hero_button_i{
         margin-left: 0px;
