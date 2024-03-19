@@ -11,7 +11,7 @@ function ServersList() {
             try {
                 const response = await axios.get('https://discord.com/api/v9/users/@me/guilds', {
                     headers: {
-                        Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.Gl5ARI.7mXIy2L5pUZBLRy11abd_crNVayD8zXaEJBz94'
+                        Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.GRNvR4.Dh9BOViL9d_4Hkm6MIUhhkMFVpn_5DS-tLVDb0'
                     }
                 });
                 setGuilds(response.data);

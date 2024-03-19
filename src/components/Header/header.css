@@ -200,14 +200,13 @@
 }
 
 .header_nav-btn{
-  overflow: hidden;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   order: 1;
-  margin-left: -30px;
+  margin-left: -80px;
 }
 .header_nav-btn a{
   text-decoration: none;
@@ -220,7 +219,6 @@
 }
 .header_profile{
   cursor: pointer;
-  overflow: hidden;
   width: 100px;
   height: auto;
   border-radius: 15px;
@@ -333,7 +331,7 @@
   height: 30px;
   border-radius: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
@@ -396,7 +394,7 @@
     border-bottom-right-radius: 14px;
     opacity: 0;
     top: 80px;
-    left: -10%;
+    left: -50%;
     transition: left 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
   .header_nav-links::before {
@@ -413,6 +411,9 @@
   .header_nav-links li::before{
     bottom: -8px;
     
+  }
+  .header_nav-btn{
+    margin-left: -50px;
   }
   .header_sign-in a{
     font-size: 18px;

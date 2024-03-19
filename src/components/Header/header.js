@@ -140,10 +140,9 @@ function Header(){
                     <div className='header_sign-in'>
                         {user ? (
                             <div className='header_profile' onClick={toggleProfile}>
-                                <img  src={(`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`)} ></img>
-                                <div><h4>{user.username}</h4></div>
-                                
-                            </div>
+                            <img  src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`} ></img>
+                            <div><h4>{user.username.length > 12 ? `${user.username.slice(0, 12)}...` : user.username}</h4></div>
+                        </div>
                         ) : (
                             <div className='header_sign-in'>
                                 <svg width="22px" height="22px" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">

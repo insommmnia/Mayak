@@ -8,7 +8,7 @@ function Stats() {
     
     
     return (
-        <div className='Main'>
+        <div className='Stats_section'>
             <StatsHero></StatsHero>
             <StatsGraphs></StatsGraphs>
         </div>

@@ -49,7 +49,7 @@ function Hero() {
                 </defs>
                 <g>
                     <use href="#wave" x="50" y="-4" fill="#c12b3d"/>
-                    <use href="#wave" x="50" y="-5" fill="#c12b3d"/>
+                    <use href="#wave" x="50" y="-2" fill="#c12b3d"/>
                     <use href="#wave" x="50" y="10" fill="#c12b3d"/>
                 </g>
             </svg>

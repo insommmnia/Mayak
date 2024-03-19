@@ -31,9 +31,9 @@
     height: 110%;
     margin-top: 10px;
     transition: 0.8s ease-in-out;
-    -webkit-box-shadow: 4px 4px 31px 5px rgba(105, 105, 105, 0.322);
-    -moz-box-shadow: 4px 4px 31px 5px rgba(105, 105, 105, 0.274);
-    box-shadow: 4px 4px 31px 5px rgba(105, 105, 105, 0.39);
+    -webkit-box-shadow: 1px 4px 20px 0px rgba(105, 105, 105, 0.322);
+    -moz-box-shadow: 1px 4px 20px 0px rgba(105, 105, 105, 0.274);
+    box-shadow: 1px 4px 20px 0px rgba(105, 105, 105, 0.39);
 }
 
 .servers_list_block.active {
@@ -55,8 +55,9 @@
 }
 
 .servers_list_num {
-    background: rgb(105, 105, 105);
-    background: linear-gradient(180deg, rgb(141, 141, 141) 0%, rgba(0,0,1,1) 100%);
+
+    /* background: rgb(105, 105, 105);
+    background: linear-gradient(180deg, rgb(141, 141, 141) 0%, rgba(141, 141, 141, 0.315) 100%); */
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -66,7 +67,6 @@
 }
 .servers_list_num h2 {
     font-weight: 400;
-    margin-top: -10px;
 }
 .colRed {
     font-weight: 600;

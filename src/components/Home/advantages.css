@@ -37,7 +37,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 100%;
+    height: 500px;
     justify-items: center;
     gap: 50px;
     left: 30px;
@@ -55,7 +55,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    height: 500px;
     justify-items: center;
+    align-items: center;
     gap: 0px;
     left: -30px;
     opacity: 0;
@@ -212,15 +214,15 @@
     .advant_block{
         transition: gap 32s ease-in-out, 0.4s ease-in-out;
         gap: 150px;
+        grid-template-columns: 1fr;
+        height: 750px;
     }
     .advant_container {
         gap: 0px;
     }
-    .advant_block{
-        grid-template-columns: 1fr;
-    }
     .advant_block-2{
         grid-template-columns: 1fr;
+        height: 750px;
     }
     .advant_lines img{
         width: 70px;

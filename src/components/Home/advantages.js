@@ -15,10 +15,10 @@ function Advantages() {
                 const elementPosition = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
                 let isVisible;
-                if (window.innerWidth > 2000) {
-                    isVisible = elementPosition < windowHeight * 0.8;
+                if (window.innerWidth < 2700) {
+                    isVisible = elementPosition < windowHeight * 0.5;
                 } else {
-                    isVisible = elementPosition < windowHeight * 0.4;
+                    isVisible = elementPosition < windowHeight * 0.8;
                 }
                 element.classList.toggle("active", isVisible);
             }
