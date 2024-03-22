@@ -7,6 +7,7 @@ import Header from './components/Header/header';
 import Servers from './components/Servers/servers';
 import Stats from './components/Stats/stats';
 import Home from './components/Home/home';
+import Commands from './components/Commands/commands';
 import PortfolioItem from './components/Portfolio/portfolio';
 import Callback from './components/Home/callback';
 
@@ -57,7 +58,7 @@ export default function App(){
 
     const ServersP = () => <Servers></Servers>;
     const StatsP = () => <Stats></Stats>;
-    const PortfolioP = () => <PortfolioItem />;
+    const CommandsP = () =><Commands></Commands>;
     const HomeP = () => <Home ></Home>;
 
     const [displayLocation, setDisplayLocation] = useState(location);
@@ -87,8 +88,9 @@ export default function App(){
         <Routes location={displayLocation}>
           <Route path="/servers" element={<ServersP  />} />
           <Route path="/" element={<HomeP />} />
+          <Route path="/commands" element={<CommandsP />} />
           <Route path="/callback" element={<Callback />} />
-          <Route path="/portfolio" element={<StatsP />} />
+          <Route path="/stats" element={<StatsP />} />
         </Routes>
       </div>
     );

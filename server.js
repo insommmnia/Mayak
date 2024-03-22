@@ -8,7 +8,7 @@ const app = express();
 const port = 3001;
 
 const clientId = '1214987228883714139';
-const clientSecret = 'hcrugkM9xme8l_vqrmtCKZkYMUEuf1vr';
+const clientSecret = 'biI5btr09J3CX7AkZ9jmMIMOcgODmMwJ';
 const redirectUri = 'http://localhost:3001/callback';
 
 app.use(cors());
@@ -28,7 +28,7 @@ app.get('/guildMembersCount/:guildId', async (req, res) => {
   try {
       const response = await axios.get(`https://discord.com/api/v9/guilds/${guildId}`, {
           headers: {
-              Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.Gl5ARI.7mXIy2L5pUZBLRy11abd_crNVayD8zXaEJBz94'
+              Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.GsZGFD.bbBJrdXEvueLlE6CU5OrdoZELn-ag92Zdv01XY'
           }
       });
       const membersCount = response.data.member_count;

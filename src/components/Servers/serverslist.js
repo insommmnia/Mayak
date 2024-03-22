@@ -11,7 +11,7 @@ function ServersList() {
             try {
                 const response = await axios.get('https://discord.com/api/v9/users/@me/guilds', {
                     headers: {
-                        Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.GRNvR4.Dh9BOViL9d_4Hkm6MIUhhkMFVpn_5DS-tLVDb0'
+                        Authorization: 'Bot MTIxNDk4NzIyODg4MzcxNDEzOQ.GsZGFD.bbBJrdXEvueLlE6CU5OrdoZELn-ag92Zdv01XY'
                     }
                 });
                 setGuilds(response.data);
@@ -84,7 +84,7 @@ function ServersList() {
                         </div>
                     </div>
                     <div className="server_list_btn_block" >
-                        <a href={`https://discord.com/invite/${guild.id}`}   target="_blank" rel="noopener noreferrer">
+                        <a href={`https://discord.com/channels/${guild.id}`} target="_blank" rel="noopener noreferrer">
                         <div className="server_list_button_i"  id="server_list_button_i">
                             <div id="underline"></div>
                             <a>Войти</a>
@@ -94,7 +94,7 @@ function ServersList() {
                    
                 </div>
                 ))}
-                
+
             </div>
         </div>
     );
